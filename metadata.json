@@ -1,0 +1,6 @@
+{
+  "name": "يلا إعلان — Yalla Ads",
+  "description": "منصة إعلانات ميتا الذكية — شغّل إعلانك بإيدك بالذكاء الاصطناعي وادفع محلياً عبر شام كاش مع فريق كامل يدير ويحسّن حملتك.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

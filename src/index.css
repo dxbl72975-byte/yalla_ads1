@@ -1,0 +1,359 @@
+@import "tailwindcss";
+
+:root {
+  --forest-deep: #071910;
+  --forest-mid: #0D291A;
+  --mint-bright: #6EE787;
+  --mint-Mid: #4ADE80;
+  --mint-soft: #B9F6C5;
+  --sheet-bg: #F6F8F5;
+  --ink-dark: #0D1B12;
+  --gold: #D4AF37;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #071910;
+  color: #F6F8F5;
+  font-family: 'Cairo', Tahoma, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, button, input, textarea, select {
+  font-family: 'Cairo', Tahoma, sans-serif;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* نمط الخطوط المائلة للأعمدة البيانية مثل التصميم المرجعي */
+.bar-hatched {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(13, 27, 18, 0.28) 0px,
+    rgba(13, 27, 18, 0.28) 2.5px,
+    rgba(13, 27, 18, 0.06) 2.5px,
+    rgba(13, 27, 18, 0.06) 6px
+  );
+}
+
+/* نقاط البطاقة المصرفية الثلاثية الأبعاد */
+.card-dots {
+  background-image: radial-gradient(rgba(13, 27, 18, 0.35) 1.5px, transparent 1.5px);
+  background-size: 8px 8px;
+}
+
+/* إشعاع ضوئي زمردي ناعم خلف الهيدر */
+.emerald-aurora {
+  background:
+    radial-gradient(circle at 20% 15%, rgba(110, 231, 135, 0.28) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(74, 222, 128, 0.18) 0%, transparent 55%),
+    linear-gradient(180deg, #0B2617 0%, #05120B 100%);
+}
+
+/* خلفية الاستوديو الفاتحة لعرض الشاشات الثلاث */
+.studio-backdrop {
+  background:
+    radial-gradient(circle at 50% 0%, #D9F2B4 0%, #B8DF8E 55%, #A3CF76 100%);
+}
+
+/* إخفاء شريط التمرير مع بقاء التمرير متاحاً */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Leaflet Map Luxury Custom Styling */
+.leaflet-container {
+  font-family: 'Cairo', sans-serif !important;
+  background-color: #071910 !important;
+  outline: none !important;
+  z-index: 1 !important;
+}
+
+/* Luxury Leaflet Popup */
+.leaflet-popup-content-wrapper {
+  background: rgba(7, 25, 16, 0.96) !important;
+  backdrop-filter: blur(12px) !important;
+  color: #F6F8F5 !important;
+  border-radius: 18px !important;
+  border: 1px solid rgba(110, 231, 135, 0.35) !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6), 0 0 15px rgba(110, 231, 135, 0.15) !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.leaflet-popup-content {
+  margin: 12px 14px !important;
+  font-family: 'Cairo', sans-serif !important;
+  line-height: 1.5 !important;
+}
+
+.leaflet-popup-tip {
+  background: #071910 !important;
+  border: 1px solid rgba(110, 231, 135, 0.35) !important;
+}
+
+.leaflet-popup-close-button {
+  color: #6EE787 !important;
+  top: 8px !important;
+  right: auto !important;
+  left: 8px !important;
+  font-size: 16px !important;
+}
+
+/* Leaflet Tile Dark Inversion for Dark Emerald Mode */
+.leaflet-tile-dark-emerald {
+  filter: brightness(0.68) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7) !important;
+}
+
+/* Pulsing Leaflet Marker Animation */
+@keyframes leafletPulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* Radar Sweep Animation */
+@keyframes radarSweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.radar-sweep-beam {
+  animation: radarSweep 4s linear infinite;
+  transform-origin: center center;
+}
+
+/* Radar Scan Line HUD effect */
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.hud-scanline {
+  animation: scanline 3.5s ease-in-out infinite alternate;
+}
+
+/* 3D Vault Card & Perspective */
+.perspective-card {
+  perspective: 1200px;
+}
+
+.card-3d-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, box-shadow 0.2s ease-out;
+}
+
+/* Holographic Glare Effect */
+.card-holo-glare {
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 25%,
+    rgba(212, 175, 55, 0.2) 45%,
+    rgba(110, 231, 135, 0.22) 55%,
+    transparent 80%
+  );
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+/* Glassmorphism Luxury */
+.glass-luxury {
+  background: rgba(7, 25, 16, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.24);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-emerald {
+  background: rgba(13, 41, 26, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(110, 231, 135, 0.28);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+}
+
+/* Golden Glow Button with Dynamic Ripple */
+.gold-glow-btn {
+  background: linear-gradient(135deg, #F6D365 0%, #D4AF37 40%, #AA771C 100%);
+  color: #071910;
+  font-weight: 800;
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.38), 0 0 28px rgba(212, 175, 55, 0.18);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-glow-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(212, 175, 55, 0.5), 0 0 35px rgba(212, 175, 55, 0.28);
+}
+
+.gold-glow-btn:active {
+  transform: scale(0.97);
+}
+
+/* Shimmer Sweep Animation */
+@keyframes shimmerSweep {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(150%);
+  }
+}
+
+.shimmer-element::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  animation: shimmerSweep 3s infinite;
+  pointer-events: none;
+}
+
+/* Hyper-Realistic Metallic Light-Sweep Beam for Yalla Ads Card */
+@keyframes metallicLightSweep {
+  0% {
+    transform: translateX(-200%) rotate(25deg);
+    opacity: 0.15;
+  }
+  25% {
+    opacity: 0.85;
+  }
+  50% {
+    transform: translateX(200%) rotate(25deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(250%) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+.metallic-light-sweep-beam {
+  position: absolute;
+  top: -80%;
+  bottom: -80%;
+  width: 55%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 15%,
+    rgba(255, 255, 255, 0.35) 45%,
+    rgba(253, 224, 71, 0.65) 50%,
+    rgba(255, 255, 255, 0.45) 55%,
+    rgba(110, 231, 135, 0.25) 75%,
+    transparent 100%
+  );
+  animation: metallicLightSweep 4.5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  pointer-events: none;
+  filter: blur(1.5px);
+  mix-blend-mode: screen;
+}
+
+/* Fluid Bottom Nav Animations & Micro-Bounce */
+@keyframes microBounce {
+  0% {
+    transform: scale(1);
+  }
+  28% {
+    transform: scale(1.28) translateY(-3px);
+  }
+  58% {
+    transform: scale(0.92) translateY(1px);
+  }
+  80% {
+    transform: scale(1.05) translateY(-1px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+.nav-icon-bounce {
+  animation: microBounce 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.nav-capsule-glow {
+  box-shadow: 0 4px 20px rgba(110, 231, 135, 0.35), 0 0 12px rgba(212, 175, 55, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   Live Pulsing Status Badges (Real-Time Background Tracking)
+   -------------------------------------------------------------------------- */
+@keyframes softBadgeGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4), inset 0 0 6px rgba(34, 197, 94, 0.15);
+    border-color: rgba(34, 197, 94, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 12px 3px rgba(34, 197, 94, 0.35), inset 0 0 10px rgba(34, 197, 94, 0.3);
+    border-color: rgba(74, 222, 128, 0.9);
+  }
+}
+
+@keyframes pingSlow {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+}
+
+.badge-pulse-live {
+  animation: softBadgeGlow 2.4s ease-in-out infinite;
+}
+
+.radar-ping-slow {
+  animation: pingSlow 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+
+
+
+
